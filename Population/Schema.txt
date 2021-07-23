@@ -1,0 +1,41 @@
+
+CREATE TABLE Cliente(
+    IDCliente int NOT NULL PRIMARY KEY,
+    Nombre varchar(30),
+    Telefono int,
+    Correo varchar(50)
+);
+
+
+CREATE TABLE Trabajador (
+    IDTrabajador int NOT NULL PRIMARY KEY,
+    Nombre varchar(30),
+    Telefono int
+);
+
+CREATE TABLE TipoServicio (
+    IDTipoServicio int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    IDTrabajador int,
+    FOREIGN KEY (IDTrabajador) REFERENCES trabajador(IDTrabajador),
+    Nombre varchar(30),
+    Precio int
+);
+
+CREATE TABLE Servicio (
+    IDServicio int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    IDCliente int,
+    FOREIGN KEY (IDCliente) REFERENCES cliente(IDCliente),
+    IDTipoServicio int,
+    FOREIGN KEY (IDTipoServicio) REFERENCES tiposervicio(IDTipoServicio),
+    FechaServicio varchar(11)
+);
+
+CREATE TABLE Reporte (
+    Reporte int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    IDServicio int,
+    FOREIGN KEY (IDServicio) REFERENCES servicio(IDServicio),
+    FechaReporte varchar(11),
+    HoraTrabajo int
+)
+
+

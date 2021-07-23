@@ -1,0 +1,8 @@
+INSERT INTO trabajador
+VALUES (302580697, "Ricardo Perez", 45689721);
+
+INSERT INTO trabajador
+VALUES (503680412, "Carlos Mena", 69874536);
+
+INSERT INTO trabajador
+VALUES (406530895, "Juan Aguilar", 75846589);
