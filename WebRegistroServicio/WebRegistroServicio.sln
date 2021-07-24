@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRegistroServicio", "WebRegistroServicio\WebRegistroServicio.csproj", "{9BA2530D-0408-41E4-B02F-CD85C59A78D7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EDA51622-07C2-4C53-BCBB-1E286AE97A0A} = {EDA51622-07C2-4C53-BCBB-1E286AE97A0A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceServicio", "WebServiceServicio\WebServiceServicio.csproj", "{EDA51622-07C2-4C53-BCBB-1E286AE97A0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BA2530D-0408-41E4-B02F-CD85C59A78D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA2530D-0408-41E4-B02F-CD85C59A78D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA2530D-0408-41E4-B02F-CD85C59A78D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA2530D-0408-41E4-B02F-CD85C59A78D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA51622-07C2-4C53-BCBB-1E286AE97A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA51622-07C2-4C53-BCBB-1E286AE97A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA51622-07C2-4C53-BCBB-1E286AE97A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA51622-07C2-4C53-BCBB-1E286AE97A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7667D090-83E5-4EF3-9F2C-A9DBB43EFF3B}
+	EndGlobalSection
+EndGlobal

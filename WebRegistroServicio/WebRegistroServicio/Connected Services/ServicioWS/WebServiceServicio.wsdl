@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Validar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ced" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidarResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarServicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ced" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipServ" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertarServicioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarServicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ced" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarServicioResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidarSoapIn">
+    <wsdl:part name="parameters" element="tns:Validar" />
+  </wsdl:message>
+  <wsdl:message name="ValidarSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarServicioSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarServicio" />
+  </wsdl:message>
+  <wsdl:message name="InsertarServicioSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarServicioSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarServicio" />
+  </wsdl:message>
+  <wsdl:message name="MostrarServicioSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarServicioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceServicioSoap">
+    <wsdl:operation name="Validar">
+      <wsdl:input message="tns:ValidarSoapIn" />
+      <wsdl:output message="tns:ValidarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarServicio">
+      <wsdl:input message="tns:InsertarServicioSoapIn" />
+      <wsdl:output message="tns:InsertarServicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarServicio">
+      <wsdl:input message="tns:MostrarServicioSoapIn" />
+      <wsdl:output message="tns:MostrarServicioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceServicioSoap" type="tns:WebServiceServicioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Validar">
+      <soap:operation soapAction="http://tempuri.org/Validar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarServicio">
+      <soap:operation soapAction="http://tempuri.org/InsertarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarServicio">
+      <soap:operation soapAction="http://tempuri.org/MostrarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceServicioSoap12" type="tns:WebServiceServicioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Validar">
+      <soap12:operation soapAction="http://tempuri.org/Validar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarServicio">
+      <soap12:operation soapAction="http://tempuri.org/InsertarServicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarServicio">
+      <soap12:operation soapAction="http://tempuri.org/MostrarServicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceServicio">
+    <wsdl:port name="WebServiceServicioSoap" binding="tns:WebServiceServicioSoap">
+      <soap:address location="https://localhost:44364/WebServiceServicio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceServicioSoap12" binding="tns:WebServiceServicioSoap12">
+      <soap12:address location="https://localhost:44364/WebServiceServicio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
