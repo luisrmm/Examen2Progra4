@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReporteService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50707/ReporteService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50707/ReporteService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReporteService_IDServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:IDServicio" />
+  </wsdl:message>
+  <wsdl:message name="IReporteService_IDServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IDServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReporteService_InsertReporte_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertReporte" />
+  </wsdl:message>
+  <wsdl:message name="IReporteService_InsertReporte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertReporteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReporteService_Factura_InputMessage">
+    <wsdl:part name="parameters" element="tns:Factura" />
+  </wsdl:message>
+  <wsdl:message name="IReporteService_Factura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReporteService">
+    <wsdl:operation name="IDServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReporteService/IDServicio" message="tns:IReporteService_IDServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReporteService/IDServicioResponse" message="tns:IReporteService_IDServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertReporte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReporteService/InsertReporte" message="tns:IReporteService_InsertReporte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReporteService/InsertReporteResponse" message="tns:IReporteService_InsertReporte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Factura">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReporteService/Factura" message="tns:IReporteService_Factura_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReporteService/FacturaResponse" message="tns:IReporteService_Factura_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IReporteService" type="tns:IReporteService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IDServicio">
+      <soap:operation soapAction="http://tempuri.org/IReporteService/IDServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertReporte">
+      <soap:operation soapAction="http://tempuri.org/IReporteService/InsertReporte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Factura">
+      <soap:operation soapAction="http://tempuri.org/IReporteService/Factura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReporteService">
+    <wsdl:port name="BasicHttpBinding_IReporteService" binding="tns:BasicHttpBinding_IReporteService">
+      <soap:address location="http://localhost:50707/ReporteService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

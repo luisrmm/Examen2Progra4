@@ -1,0 +1,5 @@
+SELECT  trabajador.Nombre, tiposervicio.Precio, servicio.FechaServicio
+FROM servicio
+INNER JOIN tiposervicio ON tiposervicio.IDTipoServicio = servicio.IDTipoServicio
+INNER JOIN trabajador ON trabajador.IDTrabajador = tiposervicio.IDTrabajador
+WHERE servicio.IDCliente = 305120442;

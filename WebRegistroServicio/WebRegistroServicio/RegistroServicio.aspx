@@ -1,8 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroServicio.aspx.cs" Inherits="WebRegistroServicio.RegistroServicio" %>
 
 <!DOCTYPE html>
-
-<!DOCTYPE html>
 <html>
 <style>
     input[type=text], select {
@@ -83,11 +81,11 @@
              </asp:DropDownList>
              <asp:Button ID="BtnRegistrar" runat="server" Text="Registrar" OnClick="BtnRegistrar_Click" />
               <label for="NombreTrabajador">Nombre del Trabajador</label>
-             <asp:TextBox ID="TxtNombreTrabajador" runat="server"></asp:TextBox>
+             <asp:TextBox ID="TxtNombreTrabajador" runat="server" ReadOnly="True"></asp:TextBox>
               <label for="Precio">Tipo Precio</label>
-             <asp:TextBox ID="TxtPrecio" runat="server"></asp:TextBox>
+             <asp:TextBox ID="TxtPrecio" runat="server" ReadOnly="True"></asp:TextBox>
               <label for="Fecha">Fecha</label>
-             <asp:TextBox ID="TxtFecha" runat="server"></asp:TextBox>
+             <asp:TextBox ID="TxtFecha" runat="server" ReadOnly="True"></asp:TextBox>
 
         </form>
     </div>

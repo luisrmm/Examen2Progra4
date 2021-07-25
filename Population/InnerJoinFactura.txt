@@ -1,0 +1,7 @@
+SELECT  reporte.Reporte, trabajador.IDTrabajador,trabajador.Nombre, tiposervicio.IDTipoServicio, tiposervicio.Nombre, cliente.IDCliente, cliente.Nombre,cliente.Correo, tiposervicio.Precio
+FROM reporte
+INNER JOIN servicio ON servicio.IDServicio = reporte.IDServicio
+INNER JOIN cliente ON cliente.IDCliente = servicio.IDCliente
+INNER JOIN tiposervicio ON tiposervicio.IDTipoServicio = servicio.IDTipoServicio
+INNER JOIN trabajador ON trabajador.IDTrabajador = tiposervicio.IDTrabajador
+WHERE servicio.IDServicio= 15;
